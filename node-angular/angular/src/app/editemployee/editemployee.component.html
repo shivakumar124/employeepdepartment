@@ -1,0 +1,58 @@
+
+<div class="card">
+    <h2 class="text-center">Edit Employee Details</h2>
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">First Name</label>
+          <input type="text" class="form-control" formControlName="productname" #productname [(ngModel)] = "product.productname" />
+        </div>
+        <div *ngIf="angForm.controls['productname'].invalid && (angForm.controls['productname'].dirty || angForm.controls['productname'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['productname'].errors.required">
+            First Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Last Name</label>
+          <input type="text" class="form-control" formControlName="productname" #lastname />
+        </div>
+        <div *ngIf="angForm.controls['productname'].invalid && (angForm.controls['productname'].dirty || angForm.controls['productname'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['productname'].errors.required">
+            Last Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Age </label>
+          <input type="text" class="form-control" formControlName="price" #price [(ngModel)] = "product.price" />
+        </div>
+        <div *ngIf="angForm.controls['price'].invalid && (angForm.controls['price'].dirty || angForm.controls['price'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['price'].errors.required">
+            Age is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Email</label>
+          <input type="text" class="form-control" formControlName="productname" #email />
+        </div>
+        <div *ngIf="angForm.controls['productname'].invalid && (angForm.controls['productname'].dirty || angForm.controls['productname'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['productname'].errors.required">
+            Email is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Department </label>
+          <input type="text" class="form-control" formControlName="description" #description [(ngModel)] = "product.description" />
+        </div>
+        <div *ngIf="angForm.controls['description'].invalid && (angForm.controls['description'].dirty || angForm.controls['description'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['description'].errors.required">
+            department is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <button (click)="updateProduct(productname.value, price.value, description.value)"
+          [disabled]="angForm.invalid" 
+          class="btn btn-primary">Update Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
